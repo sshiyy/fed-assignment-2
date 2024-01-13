@@ -1,36 +1,26 @@
 ----------COVIDGuard------------
+
 Student 1: Shi Ying 
 Student 2: Rayann Foo S10257860H
 
-Interactive Global Map:
+Features of the website: 
+1. themed menu - downable by PDF
+2. loyalty points when they shop - can exchange for free drinks etc 
+3. gamifications 
+   - Eric Chou Trivia Quiz -> about Eric Chou's life , music and career (earn extra points)
+   - Song Lyric Challenge -> Display lyric or play a snippet from one of his tracks -> guess the song title / complete the song
+4. Sell Merchandise -> earn points 
+5. Events -> meet and greet / live music / celebrations / promotions 
 
-Display a dynamic map with real-time COVID-19 cases worldwide.
-Allow users to zoom in and click on specific regions or countries for more detailed information.
 
-News Feed:
+Target Audience: 
+1. fans of Eric Chou 
+2. those who want to get to know more about Eric Chou 
 
-Integrate a news feed that provides the latest updates and articles related to COVID-19.
-Include reliable sources for news and updates.
+Purpose: 
+1. attract more people to visit the store 
+2. promote his music 
 
-Educational Content:
-
-Develop a gamified learning section to educate users about pandemics, viruses, and preventive measures.
-Incorporate quizzes, interactive modules, and achievements to make learning engaging.
-
-Symptom Checker:
-
-Include a symptom checker tool to help users assess whether they may have COVID-19 symptoms.
-Provide guidance on when to seek medical attention.
-
-Vaccination Information:
-
-Offer information on COVID-19 vaccines, including eligibility, availability, and scheduling appointments.
-Provide updates on vaccination campaigns locally.
-
-Travel Advisory:
-
-Integrate a feature that provides travel advisories and restrictions based on the user's location or desired destination.
-
-Localized Alerts:
-
-Implement push notifications to alert users about important updates, such as changes in local regulations or spikes in cases.
+colours 
+03045e
+0077b6
