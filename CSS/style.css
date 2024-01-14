@@ -1,16 +1,96 @@
-#loginButton {
-    display: inline-block;
-    padding: 15px 32px;
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    border: none;
+.loginContainer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width:60px; 
+    height: 30px; 
+    background-color: #0077b6;
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#loginButton:hover {
-    background-color: #45a049;
+.loginContainer:hover {
+    background-color: #03045e; /* Darker color on hover */
 }
+
+.login-text {
+    color: #ffffff; /* Text color */
+    font-size: 13px; /* Font size */
+    margin: 0;
+}
+
+.infoContainer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width:250px; 
+    height: 30px; 
+    background-color: #0077b6;
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.from-text:hover {
+    color: #03045e; /* Darker color on hover */
+}
+
+.outlet-text:hover {
+    color: #03045e; /* Darker color on hover */
+}
+
+.outlet-text,
+.from-text {
+    color: #ffffff; /* Text color */
+    font-size: 13px; /* Font size */
+    margin: 0 10px;
+}
+
+
+/* nav bar */ 
+ul.navbar {
+    list-style-type: none;
+    margin: 60px 0 0;
+    padding: 0;
+    background-color: #0077b6; 
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+ul.navbar {
+    background-color: #0077b6; 
+    overflow: hidden;
+}
+
+ul.navbar li {
+    float: left;
+    flex: 1;
+    text-align: center;
+}
+
+ul.navbar li a {
+    display: block;
+    color: #ffffff; 
+    text-align: center;
+    padding: 10px 10px; 
+    text-decoration: none;
+}
+
+ul.navbar li a:hover {
+    background-color: #0056b3; 
+    transition: background-color 0.3s; 
+}
+
+
+/* main pic */
+.mainpic {
+    position: absolute;
+    left: 10px; 
+    top: 120px; 
+    border-radius: 20px; 
+}
+
