@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto+Condensed:wght@200;500&family=Roboto:wght@300&family=Rubik&display=swap');
+
 .loginContainer {
     position: absolute;
     top: 10px;
     left: 10px;
     width:60px; 
     height: 30px; 
-    background-color: #0077b6;
+    background-color: #0f6fa3;
     border-radius: 10px; /* Rounded corners */
     display: flex;
     justify-content: center;
@@ -19,6 +21,7 @@
     color: #ffffff; /* Text color */
     font-size: 13px; /* Font size */
     margin: 0;
+    font-family: 'Rubik', sans-serif;
 }
 
 .infoContainer {
@@ -47,6 +50,8 @@
     color: #ffffff; /* Text color */
     font-size: 13px; /* Font size */
     margin: 0 10px;
+    font-family: 'Rubik', sans-serif;
+
 }
 
 
@@ -78,6 +83,8 @@ ul.navbar li a {
     text-align: center;
     padding: 10px 10px; 
     text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+
 }
 
 ul.navbar li a:hover {
@@ -85,12 +92,58 @@ ul.navbar li a:hover {
     transition: background-color 0.3s; 
 }
 
-
 /* main pic */
-.mainpic {
-    position: absolute;
-    left: 10px; 
-    top: 120px; 
-    border-radius: 20px; 
+
+#mainContent {
+    display: flex;
+    align-items: flex-start;
 }
 
+#mainPic {
+    max-width: 700vw; /* Set the maximum width to 100% of the viewport width */
+    max-height: 70vh; /* Set the maximum height to 100% of the viewport height */
+    width: auto; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+    float: left;
+    margin-left: 40px;
+    margin-top: 15px;
+    border-radius: 10px; 
+}
+
+#cafeInfo {
+    margin-left: 20px; /* Space between the main pic and cafe info */
+}
+
+/* Cafe Name */
+#cafeName {
+    font-size: 35px;
+    font-family: 'Rubik', sans-serif;
+    text-align: left; /* Float the cafe name to the left */
+    margin-left: 135px; /* Adjust the margin to the right of the main pic */
+    color: #03045e;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+#cafeName:hover {
+    color: #00b4d8;
+}
+
+/* today's special */
+#specialItem {
+    display: block; /* Ensure the image is a block-level element */
+    max-width: 40%; /* Adjust the image width as needed */
+    height: auto; /* Allow the image's height to adjust proportionally */
+    margin-top: 60px; /* Add spacing between the image and the cafe name */
+    margin-left: 70px; /* Adjust the margin to the right of the cafe name */
+}
+
+/* spotify */
+.spotify-iframe {
+    /* Adjust the width as necessary */
+    width: 30%;
+    margin-left: auto;
+    border-radius: 12px;
+}
