@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name":"Iced Coffee",
+        "price": 5.0,
+        "image": "images/menu2.jpg"
+    },
+    {
+        "id": 2,
+        "name":"Raspberry Smoothie",
+        "price": 7.50,
+        "image": "images/menu12.jpg"
+    },
+    {
+        "id": 3,
+        "name":"Ice Blueberry Lemonade",
+        "price": 8.00,
+        "image": "images/menu10.jpg"
+    },
+    {
+        "id": 4,
+        "name":"Ice Mint Tea",
+        "price": 8.00,
+        "image": "images/menu9.jpg"
+    },
+    {
+        "id": 5,
+        "name":"Hot Honey Tea",
+        "price": 6.50,
+        "image": "images/menu8.jpg"
+    },
+    {
+        "id": 6,
+        "name":"Signature Latte",
+        "price": 7.00,
+        "image": "images/hotdrink1.jpg"
+    },
+    {
+        "id": 7,
+        "name":"BBQ Braisede Pork Rice",
+        "price": 15.00,
+        "image": "images/menu7.jpg"
+    },
+    {
+        "id": 8,
+        "name":"Chicken Noodle Soup",
+        "price": 12.00,
+        "image": "images/menu6.jpg"
+    },
+    {
+        "id": 9,
+        "name":"Siew Mai",
+        "price": 2.00,
+        "image": "iamges/menu3.jpg"
+    },
+    {
+        "id": 10,
+        "name":"Char Siu Bao",
+        "price": 3.00,
+        "image": "iamges/menu4.jpg"
+    },
+    {
+        "id": 11,
+        "name":"Hak Gow",
+        "price": 2.00,
+        "image": "iamges/menu5.jpg"
+    },
+    {
+        "id": 12,
+        "name":"Xiao Long Bao",
+        "price": 9.00,
+        "image": "iamges/menu1.jpg"
+    }
+]

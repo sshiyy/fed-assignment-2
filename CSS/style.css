@@ -171,60 +171,155 @@ img {
 
 
 /* product */
-.product{
-    background: var(--bg);
-}
 
-.product .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
-    gap: 2rem;
-}
+/* Global CSS variables */
+:root {
+    /* custom properties*/
+    --primary-color: #0077b6;
+    --secondary: #03045e;
+    --bg: #0077b6;
+    --black: #000;
+    --white: #fff;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
 
-.product .box-container .box{
-    background: var(--white);
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-    position: relative;
-    overflow: hidden;
+
+  .container {
+    width: 900px;
+    margin: auto;
+    max-width: 90vw;
     text-align: center;
-}
-
-.product .box-container .box .image{
-    height: 35rem;
+    transition: transform 0.5s;
+  }
+  svg {
+    width: 30px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  .icon-cart {
+    position: relative;
+  }
+  .icon-cart span {
+    position: absolute;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: 50%;
+    right: -20px;
+  }
+  .title {
+    font-size: xx-large;
+  }
+  .listProduct .item img {
+    width: 90%;
+    border-radius: 1rem;
+  }
+  .listProduct {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    
+  }
+  .listProduct .item {
+    background-color: #eeeee6;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .listProduct .item h2 {
+    font-weight: 500;
+    font-size: large;
+  }
+  .listProduct .item .price {
+    letter-spacing: 7px;
+    font-size: small;
+  }
+  .listProduct .item button {
+    background-color: #353432;
+    color: #eee;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+  }
+  
+  /* cart */
+  .cartTab {
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 0.5s;
+  }
+  body.showCart .cartTab {
+    right: 0;
+  }
+  body.showCart .container {
+    transform: translateX(-250px);
+  }
+  .cartTab h1 {
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+  }
+  .cartTab .cart-btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cartTab button {
+    background-color: var(--bg);
+    border: none;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .cartTab .close {
+    background-color: #eee;
+  }
+  .listCart .item img {
     width: 100%;
-    padding: 1.1rem;
-}
-
-.product .box-container .box .image img{
-    height: 100%;
-    width: 100%;
-    border-radius: .5rem;
-    object-fit: cover;
-}
-
-.product .box-container .box .content{
-    padding: 2rem;
-    padding-top: 0;
-}
-
-.product .box-container .box .content h1{
-    color: var(--black);
-    font-size: 2.5rem;
-}
-
-.product .box-container .box .content .stars{
-    padding: 1rem 0;
-}
-
-.product .box-container .box .content .stars i{
-    font-size: 1.7rem;
-    color: var(--secondary);
-}
-
-.product .box-container .box .content .price{
-    font-size: 2.5rem;
-    font-weight: bolder;
-    color: var(--secondary);
-    margin-right: 1rem;
-}
+  }
+  .listCart .item {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+  }
+  .listCart .quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    color: #555;
+    cursor: pointer;
+  }
+  .listCart .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: #eee;
+    cursor: auto;
+  }
+  .listCart .item:nth-child(even) {
+    background-color: #eee1;
+  }
+  .listCart {
+    overflow: auto;
+  }
+  .listCart::-webkit-scrollbar {
+    width: 0;
+  }
+  
