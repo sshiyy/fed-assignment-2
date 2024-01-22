@@ -6,8 +6,8 @@
     <title>menu</title>
     <link rel="stylesheet" href="CSS/style.css">
     <script src="script.js"></script>
-    <script type="text/javascript" src="product.json"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto+Condensed:wght@200;500&family=Roboto:wght@300&family=Rubik&display=swap" rel="stylesheet">
+    
 </head>  
 
 <body>
@@ -33,38 +33,45 @@
         </ul>
     </nav>
 
-     <!-- menu -->
-     <div class="container">
-        <header>
-          <div class="heading"><span>PRODUCT</span> LIST</div>
-          <div class="icon-cart">
-            <svg
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 18 20"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"
-              />
-            </svg>
-            <span>0</span>
-          </div>
-        </header>
-        <div class="listProduct"></div>
-      </div>
-      <div class="cartTab">
-        <h1>Shopping Cart</h1>
-        <div class="listCart"></div>
-        <div class="cart-btn">
-          <button class="close">CLOSE</button>
-          <button class="checkOut">Check Out</button>
-        </div>
-      </div>
+     <!-- gallery -->
+    <div class="full-img" id="fullImgBox">
+      <img src="images/hotdrink1.jpg" id="fullImg">
+      <span onclick="closeFullImg()">X</span>
+    </div>
+
+    <div class="img-gallery">
+      <img src="images/hotdrink1.jpg" onclick="openFullImg(this.src)">
+      <img src="images/menu1.jpg" onclick="openFullImg(this.src)">
+      <img src="images/menu2.jpg" onclick="openFullImg(this.src)">
+      <img src="images/menu3.jpg" onclick="openFullImg(this.src)">
+      <img src="images/menu4.jpg" onclick="openFullImg(this.src)">
+      <img src="images/menu5.jpg" onclick="openFullImg(this.src)">
+      <img src="images/menu6.jpg" onclick="openFullImg(this.src)">
+      <img src="images/menu7.jpg" onclick="openFullImg(this.src)">
+      <img src="images/menu8.jpg" onclick="openFullImg(this.src)">
+      <img src="images/menu9.jpg" onclick="openFullImg(this.src)">
+      <img src="images/menu10.jpg" onclick="openFullImg(this.src)">
+      <img src="images/menu12.jpg" onclick="openFullImg(this.src)">
+    </div>
+
+    <div class="pdf-menu">
+      <a href="C:\Users\rayan\Downloads\YEAR 1.2\front end development\fed-assignment-2\menu\xing xing melody cafe.pdf" download="xing_xing_melody_cafe.pdf" class="download-button">Download PDF Menu</a>
+    </div>
+
+<script>
+  var fullImgBox = document.getElementById("fullImgBox");
+  var fullImg = document.getElementById("fullImg")
+
+  function openFullImg(pic){
+    fullImgBox.style.display = "flex";
+    fullImg.src = pic
+  }
+
+  function closeFullImg(){
+    fullImgBox.style.display = "none";
+  }
+
+</script>
 
 </body>
 

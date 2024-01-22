@@ -170,156 +170,73 @@ img {
 }
 
 
-/* product */
+/* gallery */
+.img-gallery{
+  width: 80%;
+  margin: 100px auto 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-gap: 30px;
+}
 
-/* Global CSS variables */
-:root {
-    /* custom properties*/
-    --primary-color: #0077b6;
-    --secondary: #03045e;
-    --bg: #0077b6;
-    --black: #000;
-    --white: #fff;
-    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  }
+.img-gallery img{
+  width: 100%;
+  cursor: pointer;
+}
 
+.img-gallery img:hover{
+  transform: scale(0.8) rotate(-15deg);
+  border-radius: 20px;
+  box-shadow: 0 32px 75px rgba(68,77,136,0.2);
+}
 
-  .container {
-    width: 900px;
-    margin: auto;
-    max-width: 90vw;
-    text-align: center;
-    transition: transform 0.5s;
-  }
-  svg {
-    width: 30px;
-  }
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-  }
-  .icon-cart {
-    position: relative;
-  }
-  .icon-cart span {
-    position: absolute;
-    background-color: red;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: #fff;
-    top: 50%;
-    right: -20px;
-  }
-  .title {
-    font-size: xx-large;
-  }
-  .listProduct .item img {
-    width: 90%;
-    border-radius: 1rem;
-  }
-  .listProduct {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    
-  }
-  .listProduct .item {
-    background-color: #eeeee6;
-    padding: 20px;
-    border-radius: 20px;
-  }
-  .listProduct .item h2 {
-    font-weight: 500;
-    font-size: large;
-  }
-  .listProduct .item .price {
-    letter-spacing: 7px;
-    font-size: small;
-  }
-  .listProduct .item button {
-    background-color: #353432;
-    color: #eee;
-    border: none;
-    padding: 5px 10px;
-    margin-top: 10px;
-    border-radius: 20px;
-  }
-  
-  /* cart */
-  .cartTab {
-    width: 400px;
-    background-color: #353432;
-    color: #eee;
-    position: fixed;
-    top: 0;
-    right: -400px;
-    bottom: 0;
-    display: grid;
-    grid-template-rows: 70px 1fr 70px;
-    transition: 0.5s;
-  }
-  body.showCart .cartTab {
-    right: 0;
-  }
-  body.showCart .container {
-    transform: translateX(-250px);
-  }
-  .cartTab h1 {
-    padding: 20px;
-    margin: 0;
-    font-weight: 300;
-  }
-  .cartTab .cart-btn {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .cartTab button {
-    background-color: var(--bg);
-    border: none;
-    font-family: Poppins;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  .cartTab .close {
-    background-color: #eee;
-  }
-  .listCart .item img {
-    width: 100%;
-  }
-  .listCart .item {
-    display: grid;
-    grid-template-columns: 70px 150px 50px 1fr;
-    gap: 10px;
-    text-align: center;
-    align-items: center;
-  }
-  .listCart .quantity span {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-    color: #555;
-    cursor: pointer;
-  }
-  .listCart .quantity span:nth-child(2) {
-    background-color: transparent;
-    color: #eee;
-    cursor: auto;
-  }
-  .listCart .item:nth-child(even) {
-    background-color: #eee1;
-  }
-  .listCart {
-    overflow: auto;
-  }
-  .listCart::-webkit-scrollbar {
-    width: 0;
-  }
-  
+.full-img{
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.full-img img{
+  width: 90%;
+  max-width: 500px;
+}
+
+.full-img span{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+  font-family: 'Rubik', sans-serif;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* pdf menu */
+.pdf-menu {
+  display: flex; /* Enables flexbox */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+}
+
+.download-button {
+  display: inline-block; /* Aligns the button correctly */
+  padding: 10px 20px; /* Size of the button */
+  background-color: #007bff; /* Blue background color */
+  color: white; /* Text color */
+  border-radius: 15px; /* Rounded corners */
+  text-decoration: none; /* Removes underline from link */
+  font-weight: bold; /* Makes the text bold */
+  font-family: Arial, sans-serif; /* Font style */
+  text-align: center; /* Center the text */
+}
+
+.download-button:hover {
+  background-color: #0056b3; /* Darker blue when hovered */
+}
