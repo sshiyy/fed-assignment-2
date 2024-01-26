@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <script src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto+Condensed:wght@200;500&family=Roboto:wght@300&family=Rubik&display=swap" rel="stylesheet">
-</head> 
-
-<body>
-    <section class="container content-section">
-        <h2 class="section-header">CART</h2>
-        <div class="cart-row">
-            <span class="cart-item cart-header cart-column">ITEM</span>
-            <span class="cart-price cart-header cart-column">PRICE</span>
-            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+    <title>Cart - Bakery Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <header class="text-center p-6 bg-white shadow-md">
+        <h1 class="text-3xl font-bold">Your Cart</h1>
+    </header>
+    <main class="container mx-auto mt-10">
+        <div class="cart-items bg-white shadow-lg rounded-lg p-6">
+            <!-- Cart Items will be dynamically inserted here -->
         </div>
-        <div class="cart-items">
-            <!-- Items added to the cart will appear here -->
+        <div class="total-amount text-right mt-4">
+            <span class="font-bold text-xl">Total: $<span id="total-amount">0.00</span></span>
         </div>
-        <div class="cart-total">
-            <strong class="cart-total-title">Total</strong>
-            <span class="cart-total-price">$0</span>
+        <div class="checkout-button text-right mt-4">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Proceed to Checkout
+            </button>
         </div>
-        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-    </section>
-
+    </main>
+    <script src="addtocart.js"></script>
 </body>
 </html>
