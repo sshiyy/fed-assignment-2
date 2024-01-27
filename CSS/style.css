@@ -357,46 +357,19 @@ ul.navbar li a:hover {
   color: white;
 } 
 
-/* sidebar */
-.sidebar-container{
-  display: flex;
-  width: 70%;
-  margin-bottom: 30px;
+/* cart */
+#cart-icon {
+  font-size: 30px; /* Adjust the font size to make the cart icon bigger */
+  cursor: pointer;
 }
 
-#root{
-  width: 60%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+#cart-display {
+  text-align: right;
 }
 
-.sidebar{
-  width: 40%;
-  border-radius: 5px;
-  background-color: #eee;
-  margin-left: 20px;
-  padding: 15px;
-  text-align: center ;
+#cart-display a {
+  text-decoration: none; /* Remove underlining */
+  color: #0077b6; /* Set the color to black or your preferred color */
   font-family: 'Rubik', sans-serif;
-}
-
-.cart-head{
-  font-family: 'Rubik', sans-serif;
-  background-color: #0077b6;
-  border-radius: 3px;
-  height: 40px;
-  padding: 10px;
-  margin-bottom: 20px;
-  color: white;
-  display: flex;
-  align-items: center;
-}
-
-.cart-foot{
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0px;
-  padding: 10px 0px;
-  border-top: 1px solid #333;
+  font-size: 20px;
 }

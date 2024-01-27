@@ -46,8 +46,10 @@
     </nav>
 
     <!-- Cart icon and count -->
-    <div class="cart"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a><p id="count">0</p></div>
-    <script src="addtocart.js"></script>
+    <div id="cart-display">
+        <div id="cart-icon" onclick="viewCart()">🛒 <a href="checkout.html" onclick="checkCart()">Checkout</a></div>
+
+    </div>
 
     <!-- products -->
     <div class="container mx-auto p-6">
@@ -56,7 +58,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <!-- Product 1 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="1">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="1" onclick="addToCart('Ice Coffee')">
                 <img src="images/menu2.jpg" class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">Ice Coffee</h2>
                 <span class="product-price">$5.00</span>
@@ -66,7 +68,7 @@
             </div>
 
             <!-- Product 2 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="2">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="2" onclick="addToCart('Raspberry Smoothie')">
                 <img src="images/menu12.jpg"class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">Raspberry Smoothie</h2>
                 <span class="product-price">$7.50</span>
@@ -76,7 +78,7 @@
             </div>
 
             <!-- Product 3 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="3">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="3" onclick="addToCart('Ice Blueberry Lemonade')">
                 <img src="images/menu10.jpg" class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">Ice Blueberry Lemonade</h2>
                 <span class="product-price">$8.00</span>
@@ -86,7 +88,7 @@
             </div>
 
             <!-- Product 4 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="4">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="4" onclick="addToCart('Ice Mint Tea')">
                 <img src="images/menu9.jpg"class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">Ice Mint Tea</h2>
                 <span class="product-price">$8.00</span>
@@ -96,7 +98,7 @@
             </div>
 
             <!-- Product 5 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="5">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="5" onclick="addToCart('Hot Honey Tea')">
                 <img src="images/menu8.jpg" class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">Hot Honey Tea</h2>
                 <span class="product-price">$6.50</span>
@@ -106,7 +108,7 @@
             </div>
 
             <!-- Product 6 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="6">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="6" onclick="addToCart('Singature Latte')">
                 <img src="images/menu11.jpg"class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">Singature Latte</h2>
                 <span class="product-price">$7.00</span>
@@ -116,7 +118,7 @@
             </div>
 
             <!-- Product 7 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="7">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="7" onclick="addToCart('BBQ Braised Pork Rice')">
                 <img src="images/menu7.jpg" class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">BBQ Braised Pork Rice</h2>
                 <span class="product-price">$15.00</span>
@@ -126,7 +128,7 @@
             </div>
 
             <!-- Product 8 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="8">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="8" onclick="addToCart('Chicken Noodle Soup')">
                 <img src="images/menu6.jpg"class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">Chicken Noodle Soup</h2>
                 <span class="product-price ">$12.00</span>
@@ -136,7 +138,7 @@
             </div>
 
             <!-- Product 9 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="9">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="9" onclick="addToCart('Siew Mai')">
                 <img src="images/menu3.jpg" class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">Siew Mai</h2>
                 <span class="product-price ">$2.00</span>
@@ -146,7 +148,7 @@
             </div>
 
             <!-- Product 10 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="10">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="10" onclick="addToCart('Hak Gow')">
                 <img src="images/menu5.jpg"class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">Hak Gow</h2>
                 <span class="product-price ">$2.00</span>
@@ -156,7 +158,7 @@
             </div>
 
             <!-- Product 11 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="11">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="11" onclick="addToCart('Char Siu Bao')">
                 <img src="images/menu4.jpg" class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">Char Siu Bao</h2>
                 <span class="product-price ">$3.00</span>
@@ -166,7 +168,7 @@
             </div>
 
             <!-- Product 12 -->
-            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="12">
+            <div class="product bg-white shadow-lg rounded-lg p-6" data-id="12" onclick="addToCart('Xiao Long Bao')">
                 <img src="images/menu1.jpg"class="h-40 w-full object-cover">
                 <h2 class="product-name text-xl font-bold mt-4">Xiao Long Bao</h2>
                 <span class="product-price ">$9.00</span>

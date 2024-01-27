@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto+Condensed:wght@200;500&family=Roboto:wght@300&family=Rubik&display=swap" rel="stylesheet">
+</head> 
+<style>
+  body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #00b4d8;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin-top: 200px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="date"] {
+    width: calc(100% - 18px);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  #back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+    }
+
+</style>
+
+<body>
+  <div id="back-button"><a href="shop.html">Back</a></div>
+  <form action="" method="post">
+      <h1>Checkout</h1>
+
+      <p>Full Name:</p>
+      <input type="text" placeholder="Name" name="username" id="name" required>
+
+      <p>Email Address:</p>
+      <input type="email" placeholder="Email" name="email" id="email" required>
+
+      <p>Address:</p>
+      <input type="text" placeholder="Address" name="address" id="address" required>
+
+      <p>Please select a delivery date</p>
+      <input type="date">
+
+      <p>Comments:</p>
+      <textarea id="textarea" name="textarea" rows="4" cols="30"></textarea>
+
+  <!-- Payment section -->
+  <div class="payment-section">
+    <h2>Payment Information</h2>
+
+    <p>Card Number:</p>
+    <input type="text" placeholder="Card Number" name="cardNumber" id="cardNumber" required>
+
+    <div class="card-inputs">
+        <div>
+            <p>Expiration Date:</p>
+            <input type="text" placeholder="MM/YY" name="expirationDate" id="expirationDate" required>
+        </div>
+
+        <div>
+            <p>CVC:</p>
+            <input type="text" placeholder="CVC" name="cvc" id="cvc" required>
+        </div>
+    </div>
+</div>
+
+      <p></p>
+      <input type="submit" name="checkout">
+  </form>
+</body> 
+
