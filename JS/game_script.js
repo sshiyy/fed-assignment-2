@@ -31,6 +31,13 @@ document.addEventListener('keydown', event => {
     }
 });
 
+// Add an event listener for touch input
+document.addEventListener('touchstart', event => {
+    if (!isJumping && gameActive) {
+        jump();
+    }
+});
+
 function startTimer() {
     startTime = Date.now() - elapsedTime;
     timerInterval = setInterval(() => {
