@@ -26,3 +26,6 @@ function checkCart() {
         event.preventDefault();
     }
 }
+
+
+//game quiz 

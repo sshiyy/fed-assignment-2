@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/game_style.css">
+    <script src="JS/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto+Condensed:wght@200;500&family=Roboto:wght@300&family=Rubik&display=swap" rel="stylesheet">
+</head>  
+
+<body>
+    <div class="loginContainer">
+        <p class="login-text">LOGIN</p>
+    </div>
+
+    <div class="infoContainer">
+        <p class="outlet-text">OUTLETS</p>
+        <p class="from-text">FROM ERIC</p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="#">LOYALTY POINTS</a></li>
+            <li><a href="game.html">GAME</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+            <li><a href="#">EVENTS</a></li>
+        </ul>
+    </nav>
+
+    <button id="startButton">Start Game</button>
+
+    <div id="game-container">
+      <div id="game">
+        <img id="man" src="images/eric_cartoon.png" alt="Man">
+        <img id="musicNote" src="images/music_note.png" alt="Music Note">
+        <div id="timer">Time: 0</div>
+
+      </div>
+    </div>
+
+  <audio id="jumpSound" src="audio/jump.wav" preload="auto"></audio>
+
+  <audio id="dyingSound" src="audio/die.wav" preload="auto"></audio>
+
+
+  <script src="JS/game_script.js"></script>
+
+</body>
+</html>

@@ -373,3 +373,71 @@ ul.navbar li a:hover {
   font-family: 'Rubik', sans-serif;
   font-size: 20px;
 }
+
+/* Game Quiz Styles */
+.game-page {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: #03045e;
+  text-align: center;
+  padding: 20px;
+}
+
+.quiz-container {
+  background: #0077b6;
+  border: 4px solid #00b4d8;
+  border-radius: 10px;
+  padding: 20px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.question {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.options {
+  text-align: center;
+}
+
+.option {
+  background-color: #03045e;
+  border: 2px solid #00b4d8;
+  color: white;
+  padding: 10px 15px;
+  margin: 10px;
+  display: inline-block;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.option:hover {
+  transform: scale(1.05);
+  background-color: #0077b6;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  background-color: #00b4d8;
+  color: #03045e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0077b6;
+}
+
+#score {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
