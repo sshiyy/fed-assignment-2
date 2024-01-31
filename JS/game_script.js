@@ -8,102 +8,114 @@ let startTime;
 let elapsedTime = 0;
 let timerInterval;
 
+
 document.addEventListener('DOMContentLoaded', () => {
-    const startButton = document.getElementById('startButton');
-    startButton.addEventListener('click', startGame);
-});
+    const buttonContainer = document.getElementById('buttonContainer');
+    const instructionMessage = document.getElementById('instructionMessage');
 
+    // Create the start button element
+    const startButton = document.createElement('button');
+    startButton.id = 'startButton';
+    startButton.textContent = 'Start Game';
+    buttonContainer.insertBefore(startButton, instructionMessage);
+
+    startButton.addEventListener('click', () => {
+        startGame();
+        startButton.style.display = 'none'; // Hide the start button
+        instructionMessage.style.display = 'none'; // Hide the instructional message
+    });
+});
 document.addEventListener('keydown', event => {
-  if (event.code === 'Space' && !isJumping && gameActive) {
-    jump();
-  }
+    if (event.code === 'Space' && !isJumping && gameActive) {
+        jump();
+    }
 });
 
-// Function to start the timer
 function startTimer() {
     startTime = Date.now() - elapsedTime;
     timerInterval = setInterval(() => {
         elapsedTime = Date.now() - startTime;
-        document.getElementById("timer").innerText = "Time: " + elapsedTime;
+        document.getElementById("timer").innerText = "Score: " + elapsedTime;
     }, 1); // Update the timer every millisecond
 }
 
-// Function to stop the timer
 function stopTimer() {
     clearInterval(timerInterval);
 }
 
 function jump() {
-  isJumping = true;
-  man.classList.add('jump');
-  // Play the jump sound
-  const jumpSound = document.getElementById('jumpSound');
-  jumpSound.play();
+    if(isJumping) return; // Prevent double jump
+    isJumping = true;
+    man.classList.add('jump');
+    
+    const jumpSound = document.getElementById('jumpSound');
+    jumpSound.play();
 
-  setTimeout(() => {
-    man.classList.remove('jump');
-    isJumping = false;
-  }, 600);
+    setTimeout(() => {
+        man.classList.remove('jump');
+        isJumping = false; // Reset the jumping state only after the jump is complete
+    }, 600); // Ensure this duration matches your jump animation duration
 }
 
 function startGame() {
-    document.getElementById('startButton').style.display = 'none';
-    document.getElementById('game').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    document.getElementById('game').style.display = 'block'; // Ensure the game container is visible
 
-    // Reset the timer
     elapsedTime = 0;
     document.getElementById("timer").innerText = "Time: 0";
 
     gameActive = true;
     startTimer();
+
     checkGameOver = setInterval(() => {
         const manTop = parseInt(window.getComputedStyle(man).getPropertyValue('bottom'));
         const noteLeft = parseInt(window.getComputedStyle(musicNote).getPropertyValue('left'));
-    
-        musicNote.style.animation = ''; // Reset the animation here if needed
-    
+
         if (noteLeft < 50 && noteLeft > 0 && manTop < 30) {
-          gameOver();
+            gameOver();
         }
     }, 10);
 }
 
 function gameOver() {
     stopTimer();
-
     gameActive = false;
     clearInterval(checkGameOver);
 
-  const gameOverScreen = document.createElement('div');
-  gameOverScreen.setAttribute('id', 'gameOverScreen');
-  gameOverScreen.innerHTML = `
-    <div class="game-over-message">Game Over!</div>
-    <button id="restartButton">Restart Game</button>
-  `;
-  document.getElementById('game').appendChild(gameOverScreen);
-  document.getElementById('restartButton').addEventListener('click', resetGame);
-  // Play the dying sound
-  const dyingSound = document.getElementById('dyingSound');
-  dyingSound.play();
-  
-  // Stop the music note animation
-  const musicNote = document.getElementById('musicNote');
-  musicNote.style.animation = 'none';
+    const gameOverScreen = document.createElement('div');
+    gameOverScreen.setAttribute('id', 'gameOverScreen');
+    gameOverScreen.innerHTML = `
+        <div class="game-over-message">Game Over!</div>
+        <button id="restartButton">Restart Game</button>
+    `;
+    document.getElementById('game').appendChild(gameOverScreen);
+    document.getElementById('restartButton').addEventListener('click', resetGame);
+
+    const dyingSound = document.getElementById('dyingSound');
+    dyingSound.play();
+
+    musicNote.style.animation = 'none';
 }
 
 function resetGame() {
-  const gameOverScreen = document.getElementById('gameOverScreen');
-  if (gameOverScreen) {
-    gameOverScreen.remove();
-  }
+    document.body.style.overflow = '';
+    const gameOverScreen = document.getElementById('gameOverScreen');
+    if (gameOverScreen) {
+        gameOverScreen.remove();
+    }
 
-  man.classList.remove('jump');
-  man.style.bottom = '0px'; // Reset the position of the man
-  musicNote.style.right = '0px'; // Reset the position of the music note
+    // Reset game elements and state
+    man.classList.remove('jump');
+    man.style.bottom = '0px'; // Reset man's position
+    musicNote.style.right = '0px'; // Reset music note's position
+    musicNote.style.animation = ''; // Reset any CSS animations
 
-  isJumping = false;
-  startGame();
+    // Reset game state variables
+    isJumping = false;
+    gameActive = false; // Set this to false to ensure it gets properly set in startGame
+    elapsedTime = 0;
+    document.getElementById("timer").innerText = "Time: 0";
+
+    // Restart the game
+    startGame();
 }
-
-// Initial game setup or start
-startGame();
