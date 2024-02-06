@@ -17,11 +17,12 @@
     background-color: #03045e; /* Darker color on hover */
 }
 
-.login-text {
+.login-text a{
     color: #ffffff; /* Text color */
     font-size: 13px; /* Font size */
     margin: 0;
     font-family: 'Rubik', sans-serif;
+    text-decoration: none;
 }
 
 .infoContainer {

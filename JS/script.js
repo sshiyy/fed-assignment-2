@@ -28,4 +28,16 @@ function checkCart() {
 }
 
 
-//game quiz 
+//login
+
+function toggleSignUp() {
+    var cta = document.getElementById('signupCTA');
+    var form = document.getElementById('signupForm');
+    if (cta.style.display === 'none') {
+        cta.style.display = 'flex';
+        form.style.display = 'none';
+    } else {
+        cta.style.display = 'none';
+        form.style.display = 'flex'; // Use 'flex' to center the form
+    }
+}
