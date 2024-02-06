@@ -3,7 +3,7 @@ body {
 }
 
 #game {
-    background-image: url('images/game_bg.jpg');
+    background-image: url('../images/game_bg.jpg');
     position: relative;
     width: 900px;
     height: 400px;
