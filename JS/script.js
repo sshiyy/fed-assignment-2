@@ -6,6 +6,16 @@ window.addEventListener("scroll", function(){
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", function() {
+      if (header) {
+        header.classList.toggle("sticky", window.scrollY > 0);
+      }
+    });
+  });
+  
+
+document.addEventListener('DOMContentLoaded', (event) => {
     let menu = document.querySelector('#menu-icon');
     let navlist = document.querySelector('.navlist');
 
