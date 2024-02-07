@@ -1,63 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 2 - FED</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <script src="JS/script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto+Condensed:wght@200;500&family=Roboto:wght@300&family=Rubik&display=swap" rel="stylesheet">
-</head>  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FED asg 2</title>
+<link rel="stylesheet" href="CSS/index.css">
+<script src="JS/script.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body> 
 
-<body>
+  <!-- header-->
+  <header class="sticky">
+    <a href="#" class="logo">興興 Melody Café</a>
 
-    <div class="loginContainer">
-        <p class="login-text"><a href="login.html">LOGIN</a></p>
+    <ul class="navlist">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="game.html">Game</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+
+    <div class="header-icons">
+      <a href="#"><i class="bx bx-shopping-bag"></i></a>
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </div>
+  </header>
+
+  <!-- home-->
+  <section class="home" id="home">
+    <img src="../images/cartoon_index.jpg" alt="Background" class="home-bg">
+    <div class="home-text">
+      <h1>Eric Chou<br><span>Melody Cafe</span></h1>
+      <p>A perfect blend of serenity and inspiration.</p>
+      <a target="_blank" href="https://drive.google.com/file/d/12XS1O9i9fbYnDH4YLmWTZMUt5n44uPxr/view?usp=sharing" class="btn">Download Menu</a>
+    </div>
+  </section>
+
+  <!-- gallery -->
+  <div class="full-img" id="fullImgBox">
+    <img src="images/menu11.jpg" id="fullImg">
+    <span onclick="closeFullImg()">X</span>
+  </div>
+
+  <div class="img-gallery">
+    <img src="images/menu11.jpg" onclick="openFullImg(this.src)">
+    <img src="images/menu1.jpg" onclick="openFullImg(this.src)">
+    <img src="images/menu2.jpg" onclick="openFullImg(this.src)">
+    <img src="images/menu3.jpg" onclick="openFullImg(this.src)">
+    <img src="images/menu4.jpg" onclick="openFullImg(this.src)">
+    <img src="images/menu5.jpg" onclick="openFullImg(this.src)">
+    <img src="images/menu6.jpg" onclick="openFullImg(this.src)">
+    <img src="images/menu7.jpg" onclick="openFullImg(this.src)">
+    <img src="images/menu8.jpg" onclick="openFullImg(this.src)">
+    <img src="images/menu9.jpg" onclick="openFullImg(this.src)">
+    <img src="images/menu10.jpg" onclick="openFullImg(this.src)">
+    <img src="images/menu12.jpg" onclick="openFullImg(this.src)">
+  </div>
+
+  <!--footer-->
+  <section class="contact" id="contact">
+    <div class="main-contact">
+      <h3>興興 Melody Café</h3>
+      <h5>Contact Us</h5>
+      <div class="icons">
+        <a href="#"><i class="bx bxl-facebook-square"></i></a>
+        <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+      </div>
     </div>
 
-    <div class="infoContainer">
-        <p class="outlet-text">OUTLETS</p>
-        <p class="from-text">FROM ERIC</p>
+    <div class="main-contact">
+      <h3>Explore</h3>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="game.html">Game</a></li>
+      <li><a href="login.html">Login</a></li>
     </div>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <ul class="navbar">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="menu.html">MENU</a></li>
-            <li><a href="#">LOYALTY POINTS</a></li>
-            <li><a href="game.html">GAME</a></li>
-            <li><a href="shop.html">SHOP</a></li>
-            <li><a href="#">EVENTS</a></li>
-        </ul>
-    </nav>
-
-    <div id="mainContent">
-        <div id="cafeNameContainer">
-            <div id="cafeName">興興 Melody Café</div>
-        </div>
-
-        <div id="cafepic">
-            <img src="images/cafepic.jpg">
-        </div>
-
-        <div class="content-container">
-            <div id="mainpic">
-                <img src="images/main_image.jpg" alt="Main Image">
-            </div>
-            <div class="right-container"> <!-- New container for welcome message and Spotify iframe -->
-                <p id="welcomeMsg">
-                Welcome to <span class="highlight">興興 Melody Café</span> by Eric Chou! Here, every note of his soulful music infuses the ambiance,
-                creating a perfect blend of serenity and inspiration. As you savor our specially crafted menu,
-                let the melodies transport you to a realm of musical bliss. Relax, unwind and let the lyrical
-                journey begin. We're thrilled to have you here and hope each visit strikes a chord in your heart 🎵✨
-                </p>
-                <iframe class="spotify-iframe" src="https://open.spotify.com/embed/artist/5fEQLwq1BWWQNR8GzhOIvi?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            </div>
-        </div>
-
+    <!-- Newsletter -->
+    <div class="main-contact">
+      <h3 class="mb-3 mb-md-0 news-word">Sign Up For Our Newsletter</h3>
+      <div class="input-group news-input">
+        <input type="email" id="newsletter-email" class="form-control" required placeholder="Enter Email">
+        <button class="btn btn-dark btn-lg" type="button" id="newsletter-submit">Sign Up</button>
+      </div>
     </div>
+
+  </section>
+
+
+  <script>
+    var fullImgBox = document.getElementById("fullImgBox");
+    var fullImg = document.getElementById("fullImg")
+  
+    function openFullImg(pic){
+      fullImgBox.style.display = "flex";
+      fullImg.src = pic
+    }
+  
+    function closeFullImg(){
+      fullImgBox.style.display = "none";
+    }
+  
+  </script>
 
 </body>
-
-</html> 
+</html>

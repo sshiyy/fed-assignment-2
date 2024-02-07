@@ -1,3 +1,25 @@
+//nav bar 
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", function(){
+    header.classList.toggle("sticky", window.scrollY > 0);
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    let menu = document.querySelector('#menu-icon');
+    let navlist = document.querySelector('.navlist');
+
+    if (menu && navlist) { // Check if both elements exist
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navlist.classList.toggle('open');
+        };
+    } else {
+        console.log('Menu or navlist not found');
+    }
+});
+
+
 // Initialize an empty cart array
 let cart = [];
 
