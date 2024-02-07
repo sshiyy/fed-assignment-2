@@ -17,22 +17,22 @@ body {
     background-repeat: no-repeat;
     background-position: center;
   }
-
-  body > main {
-    flex: 1 0 auto; /* The game container will grow to fill the space */
+  #game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Full width */
+    text-align: center;
   }
-  
-  body > footer {
-    flex-shrink: 0; /* The footer will not shrink smaller than its content */
-  }
 
-#game-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-} 
+  #game-img {
+    width: 100%; 
+    max-height: 80vh; /* Set the maximum height to 80% of the viewport height */
+    display: block; /* Ensures the image is a block-level element to center it with margin */
+    margin: 10vh auto 0; /* Centers the image vertically with equal top and bottom space and horizontally */
+    object-fit: contain; /* Ensures the image is scaled to be contained within its element's box */
+  }
 
 #buttonContainer {
     display: flex;
@@ -45,7 +45,7 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
   #man {
@@ -142,6 +142,7 @@ body {
     margin-top: 35px; /* Spacing above the message */
     text-align: center;
     font-family: 'Rubik', sans-serif;
+    margin-bottom: 50px;
 }
 
 #buttonContainer {
