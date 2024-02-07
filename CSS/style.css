@@ -1,160 +1,358 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto+Condensed:wght@200;500&family=Roboto:wght@300&family=Rubik&display=swap');
 
-.loginContainer {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width:60px; 
-    height: 30px; 
-    background-color: #0f6fa3;
-    border-radius: 10px; /* Rounded corners */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.loginContainer:hover {
-    background-color: #03045e; /* Darker color on hover */
-}
-
-.login-text a{
-    color: #ffffff; /* Text color */
-    font-size: 13px; /* Font size */
-    margin: 0;
-    font-family: 'Rubik', sans-serif;
-    text-decoration: none;
-}
-
-.infoContainer {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width:250px; 
-    height: 30px; 
-    background-color: #0077b6;
-    border-radius: 10px; /* Rounded corners */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.from-text:hover {
-    color: #03045e; /* Darker color on hover */
-}
-
-.outlet-text:hover {
-    color: #03045e; /* Darker color on hover */
-}
-
-.outlet-text,
-.from-text {
-    color: #ffffff; /* Text color */
-    font-size: 13px; /* Font size */
-    margin: 0 10px;
-    font-family: 'Rubik', sans-serif;
-
-}
-
-/* nav bar */ 
-ul.navbar {
-    list-style-type: none;
-    margin: 60px 0 0;
-    padding: 0;
-    background-color: #0077b6; 
-    overflow: hidden;
-    display: flex;
-    justify-content: space-around;
-}
-
-ul.navbar {
-    background-color: #0077b6; 
-    overflow: hidden;
-}
-
-ul.navbar li {
-    float: left;
-    flex: 1;
-    text-align: center;
-}
-
-ul.navbar li a {
-    display: block;
-    color: #ffffff; 
-    text-align: center;
-    padding: 10px 10px; 
-    text-decoration: none;
-    font-family: 'Rubik', sans-serif;
-
-}
-
-ul.navbar li a:hover {
-    background-color: #0056b3; 
-    transition: background-color 0.3s; 
-}
-
-
-/* cafe name */
-#cafeNameContainer {
-    width: 100%; /* Take the full width to center the content */
-    text-align: center; /* Center the text inside this container */
-}
-
-#cafeName {
-    font-size: 35px;
-    font-family: 'Rubik', sans-serif;
-    color: #03045e;
-    margin-top: 20px;
-    margin-bottom: 40px; /* Adjust spacing as needed */
-}
-
-#centerContent {
-    display: flex;
-    justify-content: center; /* Center all children horizontally */
-    align-items: center; /* Align children vertically */
-}
-
-/* cafe pic */
-#cafepic {
-  width: 100%; /* or any specific width */
-  text-align: center; /* Centers inline or inline-block elements */
-}
-
-#cafepic img {
-  width: 90%; /* Set image width to 80% of its container */
-  height: auto; /* Maintain aspect ratio and adjust height automatically */
-  object-fit: cover; /* Cover the area, may crop the image */
-  display: block; /* Make the image a block-level element */
-  margin-left: auto; /* Auto margin on the left */
-  margin-right: auto; /* Auto margin on the right */
-}
-
-/* Content container */
-.content-container {
-  display: flex;
-  align-items: start; 
-  gap: 40px; /* Adds space between flex items */
-}
-
-/* main pic */
-#mainpic img {
-  max-width: auto;
-  max-width: 30vw;
-  margin-top: 30px;
-  margin-left: 70px;
-}
-
-/* welcome msg */
-#welcomeMsg{
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
-  font-size: 22px;
-  max-width: 50vw; /* Maximum width for the message */
-  margin-right: 20px; /* Adjust as needed */
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
 }
 
-.highlight {
-  color: #03045e; 
-  font-size: 28;
+:root{
+  --bg-color: #ffffff;
+  --text-colour: #03045e;
+  --main-colour: #0077b6;
+  --big-font: 4.5rem;
+  --h2-font: 3.5rem;
+  --h3-font: 2rem;
+  --normal-font: 1rem;
 }
+
+body{
+  background: var(--bg-color);
+  color: var(--text-colour);
+}
+
+header{
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 20px 14%;
+  transition: all .35s ease;
+}
+
+.logo{
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-colour);
+}
+
+.navlist{
+  display: flex;
+}
+
+.navlist a{
+  color: var(--text-colour);
+  font-weight: 600;
+  padding: 10px 25px;
+  font-size: var(--normal-font);
+  transition: all .36s ease;
+}
+
+.navlist a:hover{
+  color: var(--main-colour);
+}
+
+.header-icons i{
+  font-size: 32px;
+  color: var(--text-colour);
+  margin-right: 20px;
+  transition: all .36s ease;
+}
+
+.header-icons i:hover{
+  color: var(--main-colour);
+}
+
+#menu-icon{
+  font-size: 34px;
+  color: var(--text-colour);
+  z-index: 1001;
+  margin-right: 20px;
+  display: none;
+}
+
+section{
+  padding: 100px 14%
+}
+
+.home {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.home-bg {
+  position: absolute;
+  width: 100%; /* Ensure it covers the full width */
+  max-width: 100%;
+  height: 100%; /* Ensure it covers the full height */
+  object-fit: cover; /* Cover the container without losing aspect ratio */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure the image stays behind the text */
+}
+
+.home-text {
+  position: relative;
+  z-index: 1; /* Ensure the text is above the background image */
+  text-align: left; 
+  color: var(--text-color); /* Ensure text color is defined and contrasts well against the background image */
+}
+
+.home-text h1{
+  font-size: var(--big-font);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: .6rem;
+  margin-bottom: 1.4rem;
+}
+
+.home-text span{
+  font-size: var(--h2-font);
+}
+
+.home-text p{
+  font-size: var(--normal-font);
+  font-weight: 500;
+  margin-bottom: 3rem;
+  letter-spacing: .2rem;
+}
+
+.btn{
+  display: inline-block;
+  padding: 13px 25px;
+  background:var(--main-colour);
+  color: var(--bg-color);
+  border-radius: 15px;
+}
+
+.btn:hover{
+  transform: translateY(-5px);
+  background: var(--text-colour);
+}
+
+/* gallery */
+.img-gallery{
+  width: 80%;
+  margin: 100px auto 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-gap: 30px;
+}
+
+.img-gallery img{
+  width: 100%;
+  cursor: pointer;
+}
+
+.img-gallery img:hover{
+  transform: scale(0.8) rotate(-15deg);
+  border-radius: 20px;
+  box-shadow: 0 32px 75px rgba(68,77,136,0.2);
+}
+
+.full-img{
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.full-img img{
+  width: 90%;
+  max-width: 500px;
+}
+
+.full-img span{
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  font-size: 30px;
+  font-family: 'Rubik', sans-serif;
+  color: #fff;
+  cursor: pointer;
+}
+
+header.sticky{
+  background: var(--bg-color);
+  padding: 14px 14%;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 105);
+}
+
+/* footer */ 
+.contact{
+  background: var(--text-colour);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,auto));
+  gap: 2rem;
+}
+
+.main-contact h3{
+  font-size: 23px;
+  margin-bottom: 1.6rem;
+  color: var(--bg-color);
+}
+
+.main-contact h5{
+  font-size: 15px;
+  font-weight: 600;
+  color: #d2d2d2;
+}
+
+.icons{
+  display: flex;
+  margin-top: 2rem;
+}
+
+.icons i{
+  font-size: 25px;
+  margin-right: 1rem;
+  color: #d2d2d2;
+  transition: all .35s ease;
+}
+
+.icons i:hover{
+  transform: scale(1.1) translateY(-5px);
+}
+
+.main-contact li{
+  margin-bottom: 15px;
+}
+
+.main-contact li a{
+  display: block;
+  color: #d2d2d2;
+  font-size: var(--normal-font);
+  font-weight: 600;
+  transition: all .35s ease;
+}
+
+/* newletter */
+.main-contact .news-input {
+  display: flex; /* Use flexbox to align input and button */
+  gap: 10px; /* Optional: adds space between the input and the button */
+}
+
+.main-contact .news-input .form-control {
+  flex-grow: 1; /* Allows the input to grow and fill available space */
+  width: auto; /* Ensures the input width is flexible */
+  min-width: 0; /* Prevents flexbox items from not shrinking below their default size */
+}
+
+.main-contact .news-input .btn {
+  white-space: nowrap; /* Prevents the text inside the button from wrapping */
+}
+
+footer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* responsive */
+@media (max-width: 1000px) {
+  header{
+      padding:7px 4%;
+      transition: .2s;
+  }
+  header.sticky{
+      padding: 14px 4%;
+      transition: .2s;
+  }
+  section{
+      padding: 80x 4%;
+      transition: .1s;
+  }
+}
+
+@media (max-width: 832px) {
+  #menu-icon{
+      display: block;
+  }
+  .header-icons{
+      display: inline-flex;
+  }
+  .navlist{
+      position: absolute;
+      top: 100%;
+      left: -100%;
+      width: 280px;
+      height: 120vh;
+      background: var(--bg-color);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 150px 30px;
+      transition: all .45s ease;
+  }
+  .navlist a{
+      display: block;
+      margin: 1.2rem 0;
+  }
+  .navlist.open{
+      left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-text h1 {
+      font-size: calc(var(--big-font) * 0.75); /* Smaller font size */
+      letter-spacing: 0.3rem; /* Less spacing */
+      margin-bottom: 1rem; /* Adjust spacing */
+  }
+
+  .home-text span {
+      font-size: calc(var(--h2-font) * 0.75); /* Adjust for smaller screens */
+  }
+
+  .home-text p {
+      font-size: calc(var(--normal-font) * 0.85); /* Slightly smaller font */
+      letter-spacing: 0.1rem; /* Adjust letter spacing */
+      margin-bottom: 2rem; /* Adjust bottom margin */
+  }
+
+  .btn {
+      padding: 10px 20px; /* Smaller padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-text h1 {
+      font-size: calc(var(--big-font) * 0.6); /* Even smaller for very small devices */
+      letter-spacing: 0.15rem;
+  }
+
+  .home-text span, .home-text p {
+      font-size: calc(var(--normal-font) * 0.75); /* Uniform smaller font for simplicity */
+  }
+
+  .btn {
+      padding: 8px 18px; /* Even smaller padding */
+  }
+}
+
+/* index page end -------------------------- */
 
 /* Spotify iframe */
 .spotify-iframe {
