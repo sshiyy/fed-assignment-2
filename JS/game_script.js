@@ -8,6 +8,7 @@ let startTime;
 let elapsedTime = 0;
 let timerInterval;
 
+fetchHighestScoreAndUpdateDisplay();
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttonContainer = document.getElementById('buttonContainer');
@@ -68,10 +69,13 @@ function startGame() {
     document.body.style.overflow = 'hidden';
     document.getElementById('game').style.display = 'block'; // Ensure the game container is visible
 
+    // Reset or initialize necessary flags
+    isJumping = false; // Ensure isJumping is false at the start of the game
+    gameActive = true; // Indicate that the game is now active
+
     elapsedTime = 0;
     document.getElementById("timer").innerText = "Time: 0";
 
-    gameActive = true;
     startTimer();
 
     checkGameOver = setInterval(() => {
@@ -83,6 +87,7 @@ function startGame() {
         }
     }, 10);
 }
+
 
 function gameOver() {
     stopTimer();
@@ -102,6 +107,7 @@ function gameOver() {
     dyingSound.play();
 
     musicNote.style.animation = 'none';
+    sendPointsToAPI(elapsedTime); // Send points to API
 }
 
 function resetGame() {
@@ -125,4 +131,66 @@ function resetGame() {
 
     // Restart the game
     startGame();
+}
+
+//API 
+function sendPointsToAPI(score) {
+    // Get current date and time in ISO format
+    const now = new Date().toISOString();
+
+    // Prepare the data object with score and the current timestamp
+    const data = { score: score, createdAt: now };
+
+    const APIKEY = '65c1b8029510e8364c754629'; 
+    const apiUrl = 'https://fedasg2-d40c.restdb.io/rest/game'; 
+
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-apikey': APIKEY,
+            'Cache-Control': 'no-cache',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => console.log('Score saved:', data))
+    .catch(error => console.error('Error saving score:', error));
+    fetchHighestScoreAndUpdateDisplay();
+}
+
+
+//highest score 
+function fetchHighestScoreAndUpdateDisplay() {
+    const APIKEY = '65c1b8029510e8364c754629'; // Use the same API key
+    const apiUrl = 'https://fedasg2-d40c.restdb.io/rest/game'; // Use the same API endpoint
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-apikey': APIKEY,
+            'Cache-Control': 'no-cache',
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.length > 0) {
+            const highestScore = data.reduce((max, item) => item.score > max ? item.score : max, data[0].score);
+            document.getElementById("highestScoreDisplay").innerText = `Highest Score: ${highestScore}`;
+        } else {
+            document.getElementById("highestScoreDisplay").innerText = 'No scores found';
+        }
+    })
+    .catch(error => console.error('Error fetching scores:', error));
 }

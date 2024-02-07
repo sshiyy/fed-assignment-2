@@ -135,4 +135,41 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.log('Signup button not found');
     }
+
+    // Newsletter Button
+    var signUpBtn = document.getElementById('newsletter-submit');
+    signUpBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        console.log('button clicked');
+
+        let newsEmail = document.getElementById("newsletter-email").value;
+
+        if (newsEmail.trim() === "") {
+            alert("Please enter your email address.");
+            return; // Stop further execution if email is empty
+        }
+
+        let jsondata = {
+            "email": newsEmail,
+        };
+
+        let settings = {
+            method: "POST", 
+            headers: {
+              "Content-Type": "application/json",
+              "x-apikey": APIKEY,
+              "Cache-Control": "no-cache"
+            },
+            body: JSON.stringify(jsondata),
+        };
+
+        fetch("https://fedasg2-d40c.restdb.io/rest/newsletter", settings)
+        .then(response => response.json())
+        .then(response => {
+            console.log('Sending...', response);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
 });
