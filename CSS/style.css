@@ -132,6 +132,22 @@ section{
   letter-spacing: .2rem;
 }
 
+#login-btn.bx.bx-user{
+  font-size: 30px; /* Adjust the size as needed */
+  cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
+}
+
+#user-name.bx.bx-user{
+  font-size: 27px; /* Adjust the size as needed */
+  cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
+  font-family: 'Rubik', sans-serif;
+}
+
+.welcome-text {
+  font-family: 'Rubik', sans-serif; 
+}
+
+
 .btn{
   display: inline-block;
   padding: 13px 25px;
@@ -268,6 +284,10 @@ footer {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.header-icons .hidden {
+  display: none;
 }
 
 /* responsive */

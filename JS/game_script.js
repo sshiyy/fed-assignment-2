@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startGame();
         startButton.style.display = 'none'; // Hide the start button
         instructionMessage.style.display = 'none'; // Hide the instructional message
+        document.getElementById('game-img').style.display = 'none';
     });
 });
 document.addEventListener('keydown', event => {

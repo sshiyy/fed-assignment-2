@@ -29,51 +29,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
-
-// Initialize an empty cart array
-let cart = [];
-
-// Function to add an item to the cart
-function addToCart(item) {
-    cart.push(item);
-    alert('Item added to cart!');
-    console.log('Cart:', cart);
-}
-
-function viewCart() {
-    const cartDisplay = document.getElementById('cart-display');
-    if (cartDisplay) {
-        if (cart.length === 0) {
-            alert('Cart is empty!');
-        } else {
-            alert(`Cart Contents:\n${cart.join('\n')}`);
-        }
-    }
-}
-
-function checkCart() {
-    if (cart.length === 0) {
-        alert('Cart is empty. Please add items before proceeding to checkout.');
-        // Prevent the default behavior of the link (going to checkout.html)
-        event.preventDefault();
-    }
-}
-
-
-//login
-
-function toggleSignUp() {
-    var cta = document.getElementById('signupCTA');
-    var form = document.getElementById('signupForm');
-    if (cta.style.display === 'none') {
-        cta.style.display = 'flex';
-        form.style.display = 'none';
-    } else {
-        cta.style.display = 'none';
-        form.style.display = 'flex'; // Use 'flex' to center the form
-    }
-}
-
 //API
 document.addEventListener("DOMContentLoaded", function () {
     const APIKEY = "65c1b8029510e8364c754629";
@@ -104,7 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(data => {
                     const matchingUser = data.find(user => user.email === contactEmail && user.password === contactText);
                     if (matchingUser) {
-                        window.location.href = "profile.html";
+                        sessionStorage.setItem('userName', matchingUser.name); // Store the user's name in sessionStorage
+                        window.location.href = "index.html";
                     } else {
                         alert('Invalid email or password');
                     }
@@ -158,6 +114,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(response => {
                     console.log('Signup successful', response);
                     alert('Thank you for signing up!');
+                    // Clear the form fields after successful signup
+                    document.getElementById("signup-name").value = '';
+                    document.getElementById("signup-number").value = '';
+                    document.getElementById("signup-email").value = '';
+                    document.getElementById("signup-password").value = '';
                 })
                 .catch(error => {
                     console.error('Signup error:', error);
@@ -167,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.log('Signup button not found');
     }
+
 
     // Newsletter Button
     var signUpBtn = document.getElementById('newsletter-submit');
@@ -199,9 +161,85 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(response => {
             console.log('Sending...', response);
+            alert('Thank you for signing up!');
+            
         })
         .catch(error => {
             console.error('Error:', error);
         });
     });
 });
+
+// Function to update header based on user login status
+function updateUserDisplay(userName) {
+    const loginBtn = document.getElementById('login-btn');
+    const userNameDisplay = document.getElementById('user-name');
+
+    if (userName) {
+        loginBtn.classList.add('hidden');
+        userNameDisplay.classList.remove('hidden');
+        userNameDisplay.textContent = `Welcome, ${userName}`; // Set the user's name
+    } else {
+        loginBtn.classList.remove('hidden');
+        userNameDisplay.classList.add('hidden');
+    }
+}
+
+// Check if the user is already logged in
+function updateUserDisplay() {
+    const loginBtn = document.getElementById('login-btn');
+    const userNameDisplay = document.getElementById('user-name');
+    const userName = sessionStorage.getItem('userName'); // Get the user's name from sessionStorage
+
+    if (userName) {
+        if (loginBtn) loginBtn.classList.add('hidden');
+        if (userNameDisplay) {
+            userNameDisplay.classList.remove('hidden');
+            userNameDisplay.textContent = `Welcome, ${userName}`; // Update the display with the user's name
+            userNameDisplay.classList.add('welcome-text'); 
+        }
+    } else {
+        if (loginBtn) loginBtn.classList.remove('hidden');
+        if (userNameDisplay) userNameDisplay.classList.add('hidden');
+    }
+}
+
+updateUserDisplay();
+
+var headerLoginBtn = document.getElementById('login-btn');
+if (headerLoginBtn) {
+    headerLoginBtn.addEventListener('click', function () {
+        window.location.href = "login.html";
+    });
+}
+
+
+// Initialize an empty cart array
+let cart = [];
+
+// Function to add an item to the cart
+function addToCart(item) {
+    cart.push(item);
+    alert('Item added to cart!');
+    console.log('Cart:', cart);
+}
+
+function viewCart() {
+    const cartDisplay = document.getElementById('cart-display');
+    if (cartDisplay) {
+        if (cart.length === 0) {
+            alert('Cart is empty!');
+        } else {
+            alert(`Cart Contents:\n${cart.join('\n')}`);
+        }
+    }
+}
+
+function checkCart() {
+    if (cart.length === 0) {
+        alert('Cart is empty. Please add items before proceeding to checkout.');
+        // Prevent the default behavior of the link (going to checkout.html)
+        event.preventDefault();
+    }
+}
+

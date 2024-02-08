@@ -6,8 +6,10 @@
     <title>login</title>
     
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/normalize.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="JS/script.js"></script>
+    <script src="JS/api.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playpen+Sans&family=Roboto+Condensed:wght@200;500&family=Roboto:wght@300&family=Rubik&display=swap" rel="stylesheet">
     <style>
@@ -26,15 +28,15 @@
 
         <ul class="navlist">
         <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="shop.html">Shop</a></li>
         <li><a href="game.html">Game</a></li>
-        <li><a href="login.html">Login</a></li>
         </ul>
 
         <div class="header-icons">
-        <a href="login.html"><i class='bx bx-user'></i></a>
-        <div class="bx bx-menu" id="menu-icon"></div>
+            <div id="login-btn" class="bx bx-user"></div> <!-- Login Button -->
+            <div id="user-name" class="bx bx-user hidden"></div> <!-- User Name Display -->
+            <div class="bx bx-menu" id="menu-icon"></div>
         </div>
     </header>
 
@@ -56,7 +58,6 @@
                     </div>
                     <button type="submit" id="contact-submit" class="w-full p-3 blue-bg text-white rounded-lg">Sign In</button>
                 </form>
-                <a href="index.html" class="inline-block w-full p-3 mt-4 bg-gray-300 text-center text-gray-700 rounded-lg">Back to Main Page</a>
             </div>
         </div>
         
@@ -91,34 +92,36 @@
     </div>
 
       <!--footer-->
-  <section class="contact" id="contact">
-    <div class="main-contact">
-      <h3>興興 Melody Café</h3>
-      <h5>Contact Us</h5>
-      <div class="icons">
-        <a href="#"><i class="bx bxl-facebook-square"></i></a>
-        <a href="#"><i class="bx bxl-instagram-alt"></i></a>
-        <a href="#"><i class="bx bxl-twitter"></i></a>
-      </div>
-    </div>
+    <section class="contact" id="contact">
+        <div class="main-contact">
+        <h3>興興 Melody Café</h3>
+        <h5>Contact Us <br>
+            +65 85229003</h5>      <div class="icons">
+            <a href="#"><i class="bx bxl-facebook-square"></i></a>
+            <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+        </div>
+        </div>
 
-    <div class="main-contact">
-      <h3>Explore</h3>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="game.html">Game</a></li>
-      <li><a href="login.html">Login</a></li>
-    </div>
+        <div class="main-contact">
+        <h3>Explore</h3>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="game.html">Game</a></li>
+        <li><a href="login.html">Login</a></li>
+        </div>
 
-    <!-- Newsletter -->
-    <div class="main-contact">
-      <h3 class="mb-3 mb-md-0 news-word">Sign Up For Our Newsletter</h3>
-      <div class="input-group news-input">
-        <input type="email" id="newsletter-email" class="form-control" required placeholder="Enter Email">
-        <button class="btn btn-dark btn-lg" type="button" id="newsletter-submit">Sign Up</button>
-      </div>
-    </div>
+        <!-- Newsletter -->
+        <div class="main-contact">
+        <h3 class="mb-3 mb-md-0 news-word">Sign Up For Our Newsletter</h3>
+        <div class="input-group news-input">
+            <input type="email" id="newsletter-email" class="form-control" required placeholder="Enter Email">
+            <button class="btn btn-dark btn-lg" type="button" id="newsletter-submit">Sign Up</button>
+        </div>
+        </div>
+    </section>
+
 </body>
 
 </html>
